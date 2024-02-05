@@ -1,9 +1,8 @@
 {
   "name": "prefetch-webpack-plugin",
-  "version": "0.0.1",
+  "version": "0.0.1-beta.0",
   "description": "a prefetch webpack plugin",
   "main": "lib/index.js",
-  "types": "lib/index.d.ts",
   "author": {
     "name": "hugh",
     "email": "hzj727792893@gmail.com"
@@ -20,11 +19,7 @@
   "engines": {
     "node": ">=4"
   },
-  "scripts": {
-    "lint": "eslint src/*",
-    "build": "tsc",
-    "precommit": "npm run lint"
-  },
+  "scripts": {},
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^6.7.3",
     "@typescript-eslint/parser": "^6.7.3",
@@ -32,9 +27,8 @@
     "husky": "^0.14.3",
     "typescript": "^5.2.2",
     "webpack": "^4.6.0",
-    "webpack-cli": "^2.0.14"
-  },
-  "dependencies": {
+    "webpack-cli": "^2.0.14",
     "chalk": "^2.4.0"
-  }
+  },
+  "dependencies": {}
 }
