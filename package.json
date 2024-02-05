@@ -1,6 +1,6 @@
 {
-  "name": "prefetch-webpack-plugin",
-  "version": "0.0.1-beta.0",
+  "name": "h-prefetch-webpack-plugin",
+  "version": "0.0.1",
   "description": "a prefetch webpack plugin",
   "main": "lib/index.js",
   "author": {
@@ -10,6 +10,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/hezhengjie/prefetch-webpack-plugin"
+  },
+  "publishConfig":{
+    "registry": "https://registry.npmjs.org/"
   },
   "keywords": [
     "webpack",
