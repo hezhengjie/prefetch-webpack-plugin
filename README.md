@@ -12,9 +12,7 @@
 
 Using npm:
 
-```$ npm install --save-dev h-prefetch-webpack-plugin
-
-```
+```$ npm install --save-dev h-prefetch-webpack-plugin```
 
 or using yarn:
 
