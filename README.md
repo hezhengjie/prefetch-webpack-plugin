@@ -54,6 +54,7 @@ const PreFetchPlugin = require('h-prefetch-webpack-plugin');
 
 | 参数 | 类型 | 说明 |
 | --- | --- | --- |
+| mode|'preload'\|'proxy'\|'auto'| 预请求的模式，默认为auto|
 | prefetchList  |  PrefetchItem[] | 需要提前请求的接口列表 |
 
 ### PrefetchItem
@@ -64,7 +65,7 @@ const PreFetchPlugin = require('h-prefetch-webpack-plugin');
 | params  |  Object | 接口参数 |
 | headers  |  Object | 接口需要的特殊headers |
 
-> params和headers支持String或者Function的方式，如果是Function的方式，会传入searchParams（页面url上的params）和url(页面Url),使用如下：
+> params和headers支持String或者Function的方式，如果是Function的方式，会传入searchParams（页面url上的params）和url(页面Url), 使用如下：
 
 ```
 {
@@ -77,3 +78,19 @@ const PreFetchPlugin = require('h-prefetch-webpack-plugin');
   }
 }
 ```
+
+
+### Mode
+**preload模式**  
+该模式使用浏览器原生的preload能力进行预请求，也就是会在html中插入<link ref="preload">的标签，如果请求上没有定制header的话，建议使用这种模式。
+
+**proxy模式**
+
+该模式会使用代理fetch和xhr的方式进行预请求，适合有定制header的请求
+
+**auto模式**
+
+该模式会先判断是否支持浏览器原生的preload，如果不支持则使用proxy模式，如果支持，则会根据每个请求是否有header，智能使用
+preload模式或者proxy模式。
+
+**注意：该模式在html中引入的js代码量较大，所以如果明确可以使用preload模式的，建议主动声明preload模式。**
